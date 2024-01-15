@@ -36,30 +36,22 @@ const team = [
 ];
 console.table(team);
 
-
 // Per mostrare in pagina preparo un template
-// Apro un tag ul
-let display = '<ul><li>---------</li>';
+let display = '';
 // Per ogni elemento dell'array
 for (let member of team) {
-    // Apro un tag li
-    display += '<li>';
-    // Itero le sue proprietà
-    for (let key in member) {
-        // Aggiungo la coppia chiave valore al template
-        // Se la key è la foto cambio il template per mostrare l'immagine in pagina
-        if (key === 'pic') {
-            // Aggiungo un tag img
-            display += `<img src="img/${member[key]}" alt="${member.name}"><br>`;
-        } else {
-            display += `<strong>${key}:</strong> ${member[key]}<br>`;
-        }
-    }
-    // Chiudo il tag li
-    display += '---------</li>';
+    // Apro un tag div con classe col e subito un altro div di classe card
+    display +=
+        `<div class = "col">
+    <div class= "card">`;
+    // Inerisco il contenuto partendo dall'immagine poi nome poi lavoro
+    display += `<img src="img/${member.pic}" alt="${member.name}"><br>
+    <div class="name"><strong>${member.name}</strong></div>
+    <div class="job">${member.job}</div>`;
+    // Chiudo i tag div: col e card
+    display += `</div></div>`;
 }
-// Dopo aver iterato tutti gli elementi dell'array chiudo il tag ul
-display += '</ul>';
+
 
 // Inserisco il template in un elemento html
 displayField.innerHTML = display;
