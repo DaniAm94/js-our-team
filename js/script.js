@@ -47,7 +47,13 @@ for (let member of team) {
     // Itero le sue proprietà
     for (let key in member) {
         // Aggiungo la coppia chiave valore al template
-        display += `<strong>${key}:</strong> ${member[key]}<br>`;
+        // Se la key è la foto cambio il template per mostrare l'immagine in pagina
+        if (key === 'pic') {
+            // Aggiungo un tag img
+            display += `<img src="img/${member[key]}" alt="${member.name}"><br>`;
+        } else {
+            display += `<strong>${key}:</strong> ${member[key]}<br>`;
+        }
     }
     // Chiudo il tag li
     display += '---------</li>';
