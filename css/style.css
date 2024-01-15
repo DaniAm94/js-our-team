@@ -21,17 +21,18 @@ h1 {
 
 
 p {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     font-size: 1.5rem;
 }
 
 .row {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
     flex-wrap: wrap;
     row-gap: 20px;
     margin-top: 30px;
     margin: 0 -10px;
+    justify-content: center;
 }
 
 .col {
@@ -60,4 +61,13 @@ p {
 .job {
     height: 10%;
 
+}
+
+ul {
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+li {
+    /* border: 2px solid green; */
 }

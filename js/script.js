@@ -1,5 +1,7 @@
 const displayField = document.querySelector('.row');
 
+
+// Array contenente i dati; ogni elemento è un membro del team con: nome , lavoro e foto
 const team = [
     {
         name: 'Wayne Barnett',
@@ -32,5 +34,26 @@ const team = [
         pic: 'barbara-ramos-graphic-designer.jpg'
     }
 ];
-
 console.table(team);
+
+
+// Per mostrare in pagina preparo un template
+// Apro un tag ul
+let display = '<ul><li>---------</li>';
+// Per ogni elemento dell'array
+for (let member of team) {
+    // Apro un tag li
+    display += '<li>';
+    // Itero le sue proprietà
+    for (let key in member) {
+        // Aggiungo la coppia chiave valore al template
+        display += `<strong>${key}:</strong> ${member[key]}<br>`;
+    }
+    // Chiudo il tag li
+    display += '---------</li>';
+}
+// Dopo aver iterato tutti gli elementi dell'array chiudo il tag ul
+display += '</ul>';
+
+// Inserisco il template in un elemento html
+displayField.innerHTML = display;
